@@ -4,12 +4,12 @@
 
 O projeto MotoDispatch é um sistema para gerenciamento de aluguéis de motos e gestão de entregadores. Desenvolvido
 utilizando .NET 8 e banco de dados PostgreSQL, o sistema permite operações como cadastro, atualização e finalização de
-aluguéis, bem como o gerenciamento de informações dos entregadores.
+aluguéis, bem como o gerenciamento de informações de motos e entregadores.
 
 ## Tecnologias Utilizadas
 
 - **.NET 8**: Framework de desenvolvimento para a criação de aplicações web e APIs.
-- **PostgreSQL**: Sistema gerenciador de banco de dados objeto-relacional.
+- **PostgreSQL**: Sistema gerenciador de banco de dados relacional.
 - **Docker**: Plataforma de conteinerização para facilitar a implantação e execução do ambiente de desenvolvimento e
   produção.
 
