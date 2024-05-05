@@ -1,0 +1,20 @@
+@MotoDispatch.Api_HostAddress = http://localhost:8080
+
+ 
+### Send POST request with json body
+POST {{MotoDispatch.Api_HostAddress}}/api/rentals
+Content-Type: application/json
+
+{
+  "deliveryDriverId": "5ee44b2e-3b08-4b64-ad5d-0d44b0150592",
+  "motorcycleId": "482e02ba-645e-49ea-a9dd-f0af0fd87fd4",
+  "days": 30
+}
+
+### Send PUT request with json body
+PUT {{MotoDispatch.Api_HostAddress}}/api/rentals/f30f670f-cd99-4360-811f-a413b25f1109/complete
+Content-Type: application/json
+
+{
+  "actualReturnDate": "2024-06-08"
+}

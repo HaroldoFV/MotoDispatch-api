@@ -1,0 +1,44 @@
+@MotoDispatch.Api_HostAddress = http://localhost:8080
+
+###
+GET {{MotoDispatch.Api_HostAddress}}/api/motorcycles
+Accept: application/json
+
+### Send POST request with json body
+POST {{MotoDispatch.Api_HostAddress}}/api/deliverydrivers
+Content-Type: application/json
+
+{
+  "name": "Carlos Silva 2",
+  "cnpj": "45.970.428/0001-03",
+  "dateOfBirth": "1976-04-15T00:00:00Z",
+  "cnhNumber": "83692491823",
+  "cnhType": "B"
+}
+
+###{
+  ###"name": "John Doe",
+  ###"cnpj": "58.564.010/0001-30",
+  ###"dateOfBirth": "2024-05-01T12:46:35.820Z",
+  ###"cnhNumber": "10066250879",
+  ###"cnhType": "A"
+###}
+
+###
+GET {{MotoDispatch.Api_HostAddress}}/api/motorcycles/e23d83bb-2195-46e5-b73d-90ad84695867
+Accept: application/json
+
+### Send PUT request with json body
+PUT {{MotoDispatch.Api_HostAddress}}/api/deliverydrivers/f53c5e30-5954-4bf4-bf94-ab300293de23
+Content-Type: application/json
+
+{
+  "name": "John Doe Update test",
+  "cnpj": "82.300.713/0001-35",
+  "cnhNumber": "81368294554",
+  "cnhType": 0
+}
+
+###  
+DELETE {{MotoDispatch.Api_HostAddress}}/api/motorcycles/e23d83bb-2195-46e5-b73d-90ad84695867
+Content-Type: application/json

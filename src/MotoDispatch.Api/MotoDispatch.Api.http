@@ -1,0 +1,34 @@
+@MotoDispatch.Api_HostAddress = http://localhost:8080
+
+###
+GET {{MotoDispatch.Api_HostAddress}}/api/motorcycles
+Accept: application/json
+
+### Send POST request with json body
+POST {{MotoDispatch.Api_HostAddress}}/api/motorcycles
+Content-Type: application/json
+
+{
+  "year": 2010,
+  "licensePlate": "MNO-6789",
+  "model": "Kawasaki Ninja 650"
+}
+
+
+###
+GET {{MotoDispatch.Api_HostAddress}}/api/motorcycles/e23d83bb-2195-46e5-b73d-90ad84695867
+Accept: application/json
+
+### Send PUT request with json body
+PUT {{MotoDispatch.Api_HostAddress}}/api/motorcycles/e23d83bb-2195-46e5-b73d-90ad84695867
+Content-Type: application/json
+
+{
+  "year": 2010,
+  "licensePlate": "ABC-1234",
+  "model": "Yamaha R2"
+}
+
+###  
+DELETE {{MotoDispatch.Api_HostAddress}}/api/motorcycles/e23d83bb-2195-46e5-b73d-90ad84695867
+Content-Type: application/json

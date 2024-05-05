@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MotoDispatch.Application\MotoDispatch.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
+      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.Extensions.Options">
+        <HintPath>..\..\..\..\..\..\..\..\..\usr\local\share\dotnet\shared\Microsoft.AspNetCore.App\8.0.0\Microsoft.Extensions.Options.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>

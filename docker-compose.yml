@@ -1,0 +1,37 @@
+networks:
+  motodispatch_network:
+    driver: bridge
+
+services:
+  motodispatchapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: motodispatchapi
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - motodispatchdb
+    networks:
+      - motodispatch_network
+
+  motodispatchdb:
+    image: postgres
+    container_name: motodispatchdb
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=motodispatchdb
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=M01D15X137
+    volumes:
+      - ./src/sql:/docker-entrypoint-initdb.d/:ro
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - motodispatch_network
+
+volumes:
+  postgres_data:
+
