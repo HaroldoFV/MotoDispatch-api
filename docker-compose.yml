@@ -13,7 +13,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
-      - motodispatchdb
+      motodispatchdb:
+        condition: service_healthy
     networks:
       - motodispatch_network
 
@@ -31,6 +32,13 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - motodispatch_network
+    restart: always
+    tty: true
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U root -d motodispatchdb" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   postgres_data:
