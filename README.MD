@@ -41,3 +41,14 @@ seja fácil de configurar e replicar. Siga as instruções abaixo para configura
     http://localhost:8080/swagger/index.html
     ```
 
+## Como Verificar o Status de Saúde da Aplicação
+
+Você pode verificar o status de saúde da aplicação acessando a interface do usuário do Health Check. Para isso, siga as instruções abaixo:
+
+1. Certifique-se de que a aplicação MotoDispatch esteja em execução.
+
+2. Abra um navegador da web e acesse o seguinte URL:
+
+    ```
+    http://localhost:8080/healthchecks-ui
+    ```

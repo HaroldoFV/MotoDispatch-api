@@ -19,6 +19,7 @@ app.UseRequestResponseLogging();
 app.UseCors("CORS");
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseHealthChecks("/healthchecks-ui");
 app.MapControllers();
 
 app.Run();

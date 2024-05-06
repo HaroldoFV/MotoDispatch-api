@@ -11,6 +11,13 @@ public static class ConnectionsConfiguration
     )
     {
         services.AddDbConnection(configuration);
+
+        services.AddHealthChecks()
+            .AddNpgSql(
+                configuration.GetConnectionString("MotoDispatchDb")
+                ?? throw new Exception("Postgres configuration section not found")
+            );
+
         return services;
     }
 
@@ -25,6 +32,7 @@ public static class ConnectionsConfiguration
         services.AddDbContext<MotoDispatchDbContext>(
             options => options.UseNpgsql(
                     connectionString
+                    ?? throw new Exception("Postgres configuration section not found")
                 )
                 .LogTo(Console.WriteLine, LogLevel.Information)
         );
