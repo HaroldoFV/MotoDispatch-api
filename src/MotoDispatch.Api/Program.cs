@@ -1,10 +1,8 @@
-using Microsoft.AspNetCore.HttpLogging;
 using MotoDispatch.Api.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
-    .AddHttpLogging(x => x = new HttpLoggingOptions())
     .AddAppConections(builder.Configuration)
     .AddUseCases()
     .AddStorage(builder.Configuration)
@@ -14,9 +12,9 @@ builder.Services
     );
 
 var app = builder.Build();
-app.UseHttpLogging();
 // app.MigrateDatabase();
 app.UseDocumentation();
+app.UseRequestResponseLogging();
 //app.UseHttpsRedirection();
 app.UseCors("CORS");
 app.UseAuthentication();
